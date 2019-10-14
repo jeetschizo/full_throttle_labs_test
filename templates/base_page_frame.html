@@ -1,0 +1,59 @@
+<html lang="en">
+
+{% load static %}
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1.2, maximum-scale=1.2, user-scalable=no" />
+  <title>Easyplan Test</title>
+  <link rel="stylesheet" type="text/css" href="{% static '/components/bootstrap/dist/css/bootstrap.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static '/components/font-awesome/css/font-awesome.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static '/components/rdash-ui/dist/css/rdash.css' %}">
+</head>
+
+<body>
+  <div id="page-wrapper">
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper" style="">
+      <ul class="sidebar" id="sidebar">
+        <li class="sidebar-main">
+          <a>
+            FullThrottle Labs Test
+          </a>
+        </li>
+        <li class="sidebar-title"><span>NAVIGATION</span></li>
+        <li>
+              <a href="/">Home</a>
+        </li>
+{#        <li>#}
+{#              <a href="/problem_1/">Problem 1</a>#}
+{#        </li>#}
+{#        <li>#}
+{#              <a href="/problem_2/">Problem 2</a>#}
+{#        </li>#}
+          <li></li>
+      </ul>
+      </ul>
+    </div>
+    <div id="content-wrapper">
+      <div class="page-content">
+        <header>
+        <div class="row header">
+        </div>
+      </header>
+        <div ui-view>
+
+        </div>
+{% block content %}
+
+{% endblock %}
+      </div><!-- End Page Content -->
+    </div><!-- End Content Wrapper -->
+  </div><!-- End Page Wrapper -->
+{% block javascript %}
+<!-- <script>
+{% if not user.is_authenticated %}
+$("#page-wrapper").css("display","none");
+{% endif %}
+{% endblock %}
+</body>
+</html>
