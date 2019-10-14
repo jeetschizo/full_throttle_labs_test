@@ -5,6 +5,7 @@ from django.shortcuts import render
 from words.models import Word
 import csv
 from django.db.models import Q
+from django.db import transaction
 
 
 # Create your views here.
@@ -13,6 +14,7 @@ def main(request):
     return render(request,'home.html')
 
 
+@transaction.atomic
 def index_words():
     with open('word_search.tsv') as input_file:
         input_data = csv.reader(input_file, delimiter="\t")
