@@ -15,8 +15,8 @@ def main(request):
 
 
 @transaction.atomic
-def index_words():
-    with open('word_search.tsv') as input_file:
+def index_words(file_name):
+    with open(file_name) as input_file:
         input_data = csv.reader(input_file, delimiter="\t")
         for data in input_data:
             print(data[0])
