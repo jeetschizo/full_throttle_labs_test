@@ -26,7 +26,7 @@ SECRET_KEY = 'lgtk$xs!l#9bhwt#0lan%+0*n81b3tqxct1dcb37tez6sas5&#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
