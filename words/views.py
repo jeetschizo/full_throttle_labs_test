@@ -28,7 +28,7 @@ def index_words(file_name):
 
 def autocomplete(request):
     params = request.GET.get('q').lower().strip('\t\n\r')
-    queries = [Q(text__startswith=params), Q(text__icontains=params)]
+    queries = [Q(text__iexact=params), Q(text__startswith=params), Q(text__icontains=params)]
     qs = Q()
     for query in queries:
         qs = qs | query
