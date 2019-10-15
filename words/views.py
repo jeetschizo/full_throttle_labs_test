@@ -33,5 +33,5 @@ def autocomplete(request):
     for query in queries:
         qs = qs | query
     words = Word.objects.filter(qs)
-    words = words[:100]
+    # words = words[:100]
     return JsonResponse({"data": list(words.values_list('text', flat=True))})
