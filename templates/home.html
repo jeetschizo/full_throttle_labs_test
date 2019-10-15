@@ -10,17 +10,11 @@
                 <!--Make sure the form has the autocomplete function switched off:-->
                 <form autocomplete="off" action="#">
                     <div class="autocomplete" style="width:300px;">
-                        <input id="myInput" type="text" name="myText" placeholder="Type here"
-                               onchange="search_data(this.value)">
+                        <input id="myInput" type="text" name="myText" placeholder="Type here">
                     </div>
                 </form>
 
                 <script>
-                    var countries = [];
-
-                    function search_data(val) {
-                    }
-
                     function autocomplete(inp, arr) {
                         /*the autocomplete function takes two arguments,
                         the text field element and an array of possible autocompleted values:*/
