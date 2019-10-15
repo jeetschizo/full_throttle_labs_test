@@ -11,7 +11,7 @@ from django.db import transaction
 # Create your views here.
 
 def main(request):
-    return render(request,'home.html')
+    return render(request, 'home.html')
 
 
 @transaction.atomic
@@ -28,9 +28,9 @@ def index_words(file_name):
 
 def autocomplete(request):
     params = request.GET.get('q').lower().strip('\t\n\r')
-    queries = [Q(text__iexact=params), Q(text__startswith=params), Q(text__icontains=params)]
+    queries = [Q(text__iexact=params), Q(text__startswith=params), Q(text__icontains=params), Q(text__endswith=params)]
     qs = Q()
     for query in queries:
         qs = qs | query
     words = Word.objects.filter(qs)
-    return JsonResponse({"data": list(words.values_list('text',flat=True))})
+    return JsonResponse({"data": list(words.values_list('text', flat=True))})
