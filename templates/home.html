@@ -33,7 +33,7 @@
                             var a, b, i, val = this.value;
                             /*close any already open lists of autocompleted values*/
                             closeAllLists();
-                            if (!val) {
+                            if (!val || val.length < 4) {
                                 return false;
                             } else {
                                 console.log(val)
